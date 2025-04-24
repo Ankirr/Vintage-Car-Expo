@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vintage Car Expo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="desktop">
+      <!-- Car Manufacturers as Folders -->
+      <div class="folder" onclick="openCategory('ferrari')">
+        <img src="assets/folder_icon.png" alt="Folder Icon" />
+        <p>Ferrari</p>
+      </div>
+      <div class="folder" onclick="openCategory('mercedes')">
+        <img src="assets/folder_icon.png" alt="Folder Icon" />
+        <p>Mercedes</p>
+      </div>
+      <div class="folder" onclick="openCategory('audi')">
+        <img src="assets/folder_icon.png" alt="Folder Icon" />
+        <p>Audi</p>
+      </div>
+      <div class="folder" onclick="openCategory('bmw')">
+        <img src="assets/folder_icon.png" alt="Folder Icon" />
+        <p>BMW</p>
+      </div>
+      <div class="folder" onclick="openCategory('toyota')">
+        <img src="assets/folder_icon.png" alt="Folder Icon" />
+        <p>Toyota</p>
+      </div>
+    </div>
+
+    <div class="taskbar">
+      <button class="start-button" onclick="toggleStartMenu()">Start</button>
+      <div class="taskbar-items">
+        <div class="taskbar-item" onclick="openMyComputer()">
+          <img
+            src="assets/computer.png"
+            alt="My Computer"
+            title="My Computer"
+          />
+        </div>
+      </div>
+
+      <!-- Clock on the right side -->
+      <div class="taskbar-right">
+        <span class="taskbar-clock" id="taskbar-clock">12:00 PM</span>
+      </div>
+    </div>
+
+    <!-- Window for My Computer -->
+    <div class="window my-computer hidden" id="my-computer-window">
+      <div class="title-bar">
+        <div class="title-bar-text">My Computer</div>
+        <div class="title-bar-controls">
+          <button onclick="closeWindow('my-computer-window')">x</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <h3>Ankit Jha and Aman Saxena</h3>
+        <p>23BAI1353 and 23BAI1012</p>
+        <p>Web Programming Project</p>
+      </div>
+    </div>
+
+    <!-- Start Menu (initially hidden) -->
+    <div id="start-menu" class="start-menu hidden">
+      <ul>
+        <li>Programs</li>
+        <li>Documents</li>
+        <li>Settings</li>
+        <li>Shutdown</li>
+      </ul>
+    </div>
+
+    <!-- Category Window -->
+    <div id="category-view" class="hidden window">
+      <div class="title-bar">
+        <div class="title-bar-text" id="category-title">Category</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closeCategory()">x</button>
+        </div>
+      </div>
+      <div class="window-body">
+        <div id="icons"></div>
+      </div>
+    </div>
+
+    <!-- Car Details Popup -->
+    <div id="car-popup" class="hidden window">
+      <div class="title-bar">
+        <div class="title-bar-text">Car Details</div>
+        <div class="title-bar-controls">
+          <button aria-label="Close" onclick="closePopup()">x</button>
+        </div>
+      </div>
+      <div class="window-body" id="car-details"></div>
+    </div>
+
+    <div id="booking-popup" class="window hidden">
+      <div class="title-bar">
+        <div class="title-bar-text">Booking Form</div>
+        <div class="title-bar-controls">
+          <button onclick="closeBookingPopup()">x</button>
+          <!-- Close Booking Popup -->
+        </div>
+      </div>
+      <div id="booking-form" class="window-body">
+        <!-- Booking form dynamically populated -->
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
